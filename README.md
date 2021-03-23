@@ -33,7 +33,7 @@ mysql-ctl cli
 ### Using Databases:
 	USE <database name>
 	SELECT database();
-### Creaing tables:
+### Creating tables:
 	CREATE TABLE tablename
 	  (
 	    column_name data_type,
@@ -48,3 +48,9 @@ mysql-ctl cli
 	SHOW TABLES;
 	SHOW COLUMNS FROM tablename;
 	DESC tablename;
+#### Dropping Tables:
+	DROP TABLE <tablename>; 
+#### Challenge 1:  
+	Create a table pastries with 2 columns name and quantity - 50 char max
+	Inspect tables/columns in CLI
+	DELETE your table.
