@@ -44,3 +44,7 @@ mysql-ctl cli
 	    name VARCHAR(100),
 	    age INT
 	  );
+#### How de we know it worked ?
+	SHOW TABLES;
+	SHOW COLUMNS FROM tablename;
+	DESC tablename;
