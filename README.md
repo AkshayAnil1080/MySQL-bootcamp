@@ -30,5 +30,6 @@ mysql-ctl cli
 	CREATE DATABASE soap_store; 
 ### Drop a database:
 	DROP DATABASE database_name;   - Once you drop a database, it's gone!
-
-
+### Using Databases:
+	USE <database name>
+	SELECT database();
