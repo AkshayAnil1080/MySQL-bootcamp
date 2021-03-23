@@ -21,3 +21,9 @@ mysql-ctl start
 mysql-ctl stop
 
 mysql-ctl cli
+## CODE: Creating Databases
+	mysql-ctl cli;   - Start the CLI:
+	show databases;  - List available databases:
+	CREATE DATABASE database_name; - The general command for creating a database
+	Eg.
+	CREATE DATABASE soap_store; 
