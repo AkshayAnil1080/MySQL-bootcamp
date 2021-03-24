@@ -54,3 +54,19 @@ mysql-ctl cli
 	Create a table pastries with 2 columns name and quantity - 50 char max
 	Inspect tables/columns in CLI
 	DELETE your table.
+### Inserting Data and Viewing , Multiple Insert
+	INSERT INTO table_name(column_name) VALUES (data);
+	INSERT INTO cats(name, age) VALUES ('Jetson', 7);
+	SELECT * FROM cats;
+	INSERT INTO cats(name , age )  VALUES ( 'Charlie' , 3) , ('Jelly' ,2) , ('Tango' , 1) ;
+#### Challenge 2 :  Insert
+	Create a table people and add
+	+------------+------------+------+
+	| first_name | last_name  | age  |
+	+------------+------------+------+
+	| Linda      | Belcher    |   45 |
+	| Phillip    | Frond      |   38 |
+	| Calvin     | Fischoeder |   70 |
+	+------------+------------+------+
+
+	
