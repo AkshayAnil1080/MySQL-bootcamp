@@ -68,5 +68,10 @@ mysql-ctl cli
 	| Phillip    | Frond      |   38 |
 	| Calvin     | Fischoeder |   70 |
 	+------------+------------+------+
-
+### Warnings: 
+	INSERT INTO cats(name, age) VALUES('Lima', 'dsfasdfdas');    // name in varchar and age in int.
+	SHOW WARNINGS;    // Incorrec integer value;
+### NULL and NOT NULL
+	https://github.com/AkshayAnil1080/MySQL-bootcamp/blob/main/NULL%20AND%20NOT%20NULL.sql
+	
 	
