@@ -78,3 +78,10 @@ mysql-ctl cli
 ### Combine NOT NULL and DEFAULT:
 	CREATE TABLE cats4(name VARCHAR(20) NOT NULL DEFAULT 'unnamed',age INT NOT NULL DEFAULT 99);
 	
+### PRIMARY KEYS AND AUTO INCREMENT
+	NEED A UNIQUE IDENTIFIER TO DISTINGUISH THE SAME name and age here.  - PRIMARY KEY
+	CREATE TABLE unique_cats(cat_id INT  NOT NULL , name VARCHAR(100) , age INT , PRIMARY KEY (cat_id) ) ;
+	
+	AUTO INCREMENT  - no need to pass the primary key input and one can pass same cat name now.
+	CREATE TABLE unique_cats(cat_id INT  NOT NULL , name VARCHAR(100) , age INT , PRIMARY KEY (cat_id) , PRIMARY KEY (cat_id)) ;
+	
