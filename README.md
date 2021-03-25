@@ -66,12 +66,15 @@ mysql-ctl cli
 	+------------+------------+------+
 	| Linda      | Belcher    |   45 |
 	| Phillip    | Frond      |   38 |
-	| Calvin     | Fischoeder |   70 |
+	| Calvin     | Fischoeder |   70 |	
 	+------------+------------+------+
 ### Warnings: 
 	INSERT INTO cats(name, age) VALUES('Lima', 'dsfasdfdas');    // name in varchar and age in int.
 	SHOW WARNINGS;    // Incorrec integer value;
 ### NULL and NOT NULL
-	https://github.com/AkshayAnil1080/MySQL-bootcamp/blob/main/NULL%20AND%20NOT%20NULL.sql
-	
+	[a link] https://github.com/AkshayAnil1080/MySQL-bootcamp/blob/main/NULL%20AND%20NOT%20NULL.sql
+### Setting Default Values
+	mysql> CREATE TABLE cats3 ( name VARCHAR(20) DEFAULT 'no name provided' , age INT DEFAULT 99 );
+### Combine NOT NULL and DEFAULT:
+	CREATE TABLE cats4(name VARCHAR(20) NOT NULL DEFAULT 'unnamed',age INT NOT NULL DEFAULT 99);
 	
