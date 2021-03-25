@@ -127,4 +127,3 @@ mysql> SELECT * FROM unique_cats2;
 +--------+--------+------+
 4 rows in set (0.00 sec)
 
-

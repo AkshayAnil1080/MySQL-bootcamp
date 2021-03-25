@@ -84,4 +84,14 @@ mysql-ctl cli
 	
 	AUTO INCREMENT  - no need to pass the primary key input and one can pass same cat name now.
 	CREATE TABLE unique_cats(cat_id INT  NOT NULL AUTO_INCREMENT, name VARCHAR(100) , age INT , PRIMARY KEY (cat_id) , PRIMARY KEY (cat_id)) ;
+#### Challenge 4
+	QUESTION : 
+	Define an Employee table, wiht the following fields:
+	id - number( auto increments), mandatory , primary key
+	last_name  	- text , mandatory
+	first_name	- text , mandatory
+	middle_name	- text , not mandatory
+	age		- number mandaotry
+	current_status	- text , mandatory, defaults to 'employed'
+	SOLUTION IS MENTIONED ABOVE....
 	
