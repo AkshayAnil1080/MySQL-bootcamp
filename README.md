@@ -94,4 +94,19 @@ mysql-ctl cli
 	age		- number mandaotry
 	current_status	- text , mandatory, defaults to 'employed'
 	SOLUTION IS MENTIONED ABOVE....
-	
+
+### CURD commands - CREATE,UPDATE,READ, DELETE
+### READ 
+	SELECT clause - SELECT name FROM cats;
+	SELECT name,age, breed , cat_id FROM cats;	-  >  to read multiple columns and order matters here.
+	WHERE clause -  i want all cats who are 4 years old, or lies in particular range..
+	it may be used along read(SELECT) and update and delete commands.
+	it is case-insensitive too.
+	Eg: SELECT * FROM  cats WHERE age=4; 
+	    SELECT * FROM  cats WHERE name='Egg';
+	    SELECT * FROM  cats WHERE name='EgG';
+	ALIAS - AS
+	-> changes the name for preview only for easy use
+	-> Does not actually change the column name
+	eg SELECT name,
+		
