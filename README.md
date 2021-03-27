@@ -128,3 +128,5 @@ mysql-ctl cli
 	2. Delete cats whose age is the same as their cat_id   - delete from cats where cat_id=age;
 	3. Delete all cats here  - delete from cats;
 	
+### CURD CHALLENGE. 
+	
