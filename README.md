@@ -84,7 +84,7 @@ mysql-ctl cli
 	
 	AUTO INCREMENT  - no need to pass the primary key input and one can pass same cat name now.
 	CREATE TABLE unique_cats(cat_id INT  NOT NULL AUTO_INCREMENT, name VARCHAR(100) , age INT , PRIMARY KEY (cat_id) , PRIMARY KEY (cat_id)) ;
-#### Challenge 4
+#### Challenge 3
 	QUESTION : 
 	Define an Employee table, wiht the following fields:
 	id - number( auto increments), mandatory , primary key
@@ -120,5 +120,11 @@ mysql-ctl cli
 	2. Change Ringo's breed to "Brirish Shorthair"  - update cats set breed='British Shorthair' where name='Ringo';
 	3. Update the Maine Coons ages to 12  -  update cats set age=12 where breed='Maine Coon' ;
 
-	
+### DELETE -  
+	DELETE FROM cats WHERE name='Egg';
+	DELETE * FROM cats;  -  it deletes everything 
+#### Challenge 5: 
+	1. Delete all cats that are 4 years old - delete from cats where age=4;
+	2. Delete cats whose age is the same as their cat_id   - delete from cats where cat_id=age;
+	3. Delete all cats here  - delete from cats;
 	
