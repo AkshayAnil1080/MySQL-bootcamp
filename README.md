@@ -109,4 +109,16 @@ mysql-ctl cli
 	-> changes the name for preview only for easy use
 	-> Does not actually change the column name
 	eg SELECT name,
-		
+	
+### UPDATE - How de we change existing data ?
+	EG: changing the account password
+			
+	UPDATE cats SET breed='Shorthair' WHERE breed='Tabby';
+	UPDATE cats SET age=14 WHERE name='Misty';
+#### Challenge 4: update
+	1.Change jackson's name to jack  - update cats set name='Jack' where name='Jackson';
+	2. Change Ringo's breed to "Brirish Shorthair"  - update cats set breed='British Shorthair' where name='Ringo';
+	3. Update the Maine Coons ages to 12  -  update cats set age=12 where breed='Maine Coon' ;
+
+	
+	
