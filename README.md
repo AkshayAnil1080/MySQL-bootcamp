@@ -129,4 +129,5 @@ mysql-ctl cli
 	3. Delete all cats here  - delete from cats;
 	
 ### CURD CHALLENGE. 
+### Running SQL FILES -CREATE AND INSERT
 	
