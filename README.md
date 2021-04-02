@@ -22,7 +22,7 @@ mysql-ctl stop
 
 mysql-ctl cli
 ## CODE:
-### Creating Databases
+### 1.Creating Databases
 	mysql-ctl cli;   - Start the CLI:
 	show databases;  - List available databases:
 	CREATE DATABASE database_name; - The general command for creating a database
@@ -54,7 +54,7 @@ mysql-ctl cli
 	Create a table pastries with 2 columns name and quantity - 50 char max
 	Inspect tables/columns in CLI
 	DELETE your table.
-### Inserting Data and Viewing , Multiple Insert
+### 2.Inserting Data and Viewing , Multiple Insert
 	INSERT INTO table_name(column_name) VALUES (data);
 	INSERT INTO cats(name, age) VALUES ('Jetson', 7);
 	SELECT * FROM cats;
@@ -78,7 +78,7 @@ mysql-ctl cli
 ### Combine NOT NULL and DEFAULT:
 	CREATE TABLE cats4(name VARCHAR(20) NOT NULL DEFAULT 'unnamed',age INT NOT NULL DEFAULT 99);
 	
-### PRIMARY KEYS AND AUTO INCREMENT
+### 3.PRIMARY KEYS AND AUTO INCREMENT
 	NEED A UNIQUE IDENTIFIER TO DISTINGUISH THE SAME name and age here.  - PRIMARY KEY
 	CREATE TABLE unique_cats(cat_id INT  NOT NULL , name VARCHAR(100) , age INT , PRIMARY KEY (cat_id) ) ;
 	
@@ -95,7 +95,7 @@ mysql-ctl cli
 	current_status	- text , mandatory, defaults to 'employed'
 	SOLUTION IS MENTIONED ABOVE....
 
-### CURD commands - CREATE,UPDATE,READ, DELETE
+### 4.CRUD commands - CREATE,READ,UPDATE,DELETE
 ### READ 
 	SELECT clause - SELECT name FROM cats;
 	SELECT name,age, breed , cat_id FROM cats;	-  >  to read multiple columns and order matters here.
@@ -128,6 +128,13 @@ mysql-ctl cli
 	2. Delete cats whose age is the same as their cat_id   - delete from cats where cat_id=age;
 	3. Delete all cats here  - delete from cats;
 	
-### CURD CHALLENGE. 
+### CRUD CHALLENGE. 
 ### Running SQL FILES -CREATE AND INSERT
+	source helloworld.sql   - source keyword to run the sql file.
+### 5.CONCAT , CONCAT+ALIAS, CONCAT_WS
+	CONCAT(column, anotherColumn)
+	SELECT CONCAT(author_fname,' ', author_lname) FROM books;
+	SELECT author_fname AS first, author_lname AS last, CONCAT (author_fname, author_lname) AS fullname FROM books;
+	SELECT CONCAT_WS (' - ', title, author_fname, author_lname) FROM books;     - evenly spaced with a symbol
+	
 	
