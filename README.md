@@ -131,10 +131,21 @@ mysql-ctl cli
 ### CRUD CHALLENGE. 
 ### Running SQL FILES -CREATE AND INSERT
 	source helloworld.sql   - source keyword to run the sql file.
-### 5.CONCAT , CONCAT+ALIAS, CONCAT_WS
+### 5.CONCAT , CONCAT+ALIAS, CONCAT_WS , CONCAT+SUBSTRING+ALIAS
 	CONCAT(column, anotherColumn)
 	SELECT CONCAT(author_fname,' ', author_lname) FROM books;
 	SELECT author_fname AS first, author_lname AS last, CONCAT (author_fname, author_lname) AS fullname FROM books;
 	SELECT CONCAT_WS (' - ', title, author_fname, author_lname) FROM books;     - evenly spaced with a symbol
+	SELECT
+   		 CONCAT
+    		(
+       		SUBSTRING(title,1,10),
+       		'...'
+   		) AS 'short title'
+   		FROM books;
+	SUBSTRING('Hello World', 1, 4)  -  Hell
+	SUBSTRING('Hello World', 7)	-  World
+	SUBSTRING('Hello World', -3)	-  rld
+
 	
 	
