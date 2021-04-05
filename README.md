@@ -152,3 +152,6 @@ mysql-ctl cli
 ### 7.REVERSE
 	SELECT REVERSE('Hello World');  -- ldroW olleH  
 	SELECT CONCAT(author_fname, REVERSE(author_fname)) FROM books;
+### 8. CHAR_LENGTH
+	SELECT CHAR_LENGTH('Hello World'); -- 11
+	SELECT CONCAT(author_lname, 'is' , CHAR_LENGTH(author_lname) , 'characters long') FROM books;
