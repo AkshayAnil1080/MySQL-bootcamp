@@ -155,3 +155,10 @@ mysql-ctl cli
 ### 8. CHAR_LENGTH
 	SELECT CHAR_LENGTH('Hello World'); -- 11
 	SELECT CONCAT(author_lname, 'is' , CHAR_LENGTH(author_lname) , 'characters long') FROM books;
+
+### UPPER AND LOWER
+	SELECT UPPER('Hello World');  -- HELLO WORLD
+	SELECT LOWER('Hello World');	-- hello world
+	SELECT CONCAT('MY FAVORITE BOOK IS ', UPPER(title)) FROM books;
+
+#### Challenge 6: STRINGS in SQL. - have a look at the file above.
