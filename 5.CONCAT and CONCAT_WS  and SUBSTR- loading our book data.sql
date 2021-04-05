@@ -1,6 +1,6 @@
 
- 
-CREATE TABLE books 
+
+CREATE TABLE books
 	(
 		book_id INT NOT NULL AUTO_INCREMENT,
 		title VARCHAR(100),
@@ -11,7 +11,7 @@ CREATE TABLE books
 		pages INT,
 		PRIMARY KEY(book_id)
 	);
- 
+
 INSERT INTO books (title, author_fname, author_lname, released_year, stock_quantity, pages)
 VALUES
 ('The Namesake', 'Jhumpa', 'Lahiri', 2003, 32, 291),
@@ -68,8 +68,9 @@ SELECT * FROM books;
 +---------+-----------------------------------------------------+--------------+----------------+---------------+----------------+-------+
 
 
-// CONCAT 
-1. SELECT CONCAT(author_fname,' ', author_lname) FROM books;
+-- CONCAT
+
+SELECT CONCAT(author_fname,' ', author_lname) FROM books;
 +----------------------------------------+
 | CONCAT(author_fname,' ', author_lname) |
 +----------------------------------------+
@@ -91,7 +92,7 @@ SELECT * FROM books;
 | David Foster Wallace                   |
 +----------------------------------------+
 
-//2. ALIASES and concat
+ 2. ALIASES and concat
 SELECT CONCAT(author_fname,' ', author_lname) AS fullname FROM books;
 +----------------------+
 | fullname             |
@@ -115,7 +116,7 @@ SELECT CONCAT(author_fname,' ', author_lname) AS fullname FROM books;
 +----------------------+
 
 
-//2 a.
+-- 2 a.
 Print like this now
 | Michael | Chabon         | MichaelChabon       |
 | Patti   | Smith          | PattiSmith          |
@@ -132,7 +133,7 @@ Print like this now
 SELECT author_fname AS first, author_lname AS last, CONCAT (author_fname, author_lname) AS fullname FROM books;
 
 
-// CONCAT_WS
+-- CONCAT_WS
 
 SELECT CONCAT_WS (title, ' - ' , author_fname, ' - ' , author_lname) FROM books;    // use - before title and author_lname;
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -179,8 +180,7 @@ SELECT CONCAT_WS (' - ', title, author_fname, author_lname) FROM books;     - ev
 +------------------------------------------------------------------------+
 16 rows in set (0.00 sec)
 
-
-// SUBSTRING - SUBSTR
+-- SUBSTRING - SUBSTR
 SELECT
     CONCAT
     (
@@ -209,5 +209,3 @@ SELECT
 | Oblivion: ... |
 | Consider t... |
 +---------------+
-
-
