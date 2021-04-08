@@ -162,3 +162,9 @@ mysql-ctl cli
 	SELECT CONCAT('MY FAVORITE BOOK IS ', UPPER(title)) FROM books;
 
 #### Challenge 6: STRINGS in SQL. - have a look at the file above.
+
+### SECTION 8 : DISTINCT
+	SELECT DISTINCT author_lname FROM books;  - print distinct values from one column  
+	Concating multiple columns to print distinct values or directly use distinct keyword.
+	SELECT DISTINCT CONCAT(author_fname, ' ' ,author_lname) FROM books; // will merge all columns in one
+	SELECT DISTINCT author_fname, author_lname FROM books;  -- will use respective columns.
