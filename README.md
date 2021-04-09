@@ -168,3 +168,7 @@ mysql-ctl cli
 	Concating multiple columns to print distinct values or directly use distinct keyword.
 	SELECT DISTINCT CONCAT(author_fname, ' ' ,author_lname) FROM books; // will merge all columns in one
 	SELECT DISTINCT author_fname, author_lname FROM books;  -- will use respective columns.
+### ORDER BY
+	SELECT author_lname FROM books ORDER BY author_lname;
+	SELECT author_lname FROM books ORDER BY author_lname DESC;
+	SELECT author_fname, author_lname FROM books ORDER BY author_lname, author_fname;
