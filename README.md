@@ -172,3 +172,13 @@ mysql-ctl cli
 	SELECT author_lname FROM books ORDER BY author_lname;
 	SELECT author_lname FROM books ORDER BY author_lname DESC;
 	SELECT author_fname, author_lname FROM books ORDER BY author_lname, author_fname;
+### LIMIT
+	allows to specify a number - EG : How many books do u want to select
+ 	PRINT 5 RECENTLY REALEASED BOOKS.
+	SELECT title,released_year FROM books ORDER BY 2 DESC LIMIT 5;
+### LIKE
+	SELECT title, author_fname FROM books WHERE author_fname LIKE '%da%';   - name contains 'da'
+	SELECT title, author_fname FROM books WHERE author_fname LIKE 'da%'			- name starts with 'da'
+	mysql> SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '____';
+	mysql> SELECT title FROM books WHERE title LIKE '%\%%';   // to detect '%'
+	mysql> SELECT title FROM books WHERE title LIKE '%\_%';   // to detect '_'
