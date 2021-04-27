@@ -1,0 +1,40 @@
+SELECT title, author_lname FROM books;
+-- +-----------------------------------------------------+----------------+
+-- | title                                               | author_lname   |
+-- +-----------------------------------------------------+----------------+
+-- | The Namesake                                        | Lahiri         |
+-- | Norse Mythology                                     | Gaiman         |
+-- | American Gods                                       | Gaiman         |
+-- | Interpreter of Maladies                             | Lahiri         |
+-- | A Hologram for the King: A Novel                    | Eggers         |
+-- | The Circle                                          | Eggers         |
+-- | The Amazing Adventures of Kavalier & Clay           | Chabon         |
+-- | Just Kids                                           | Smith          |
+-- | A Heartbreaking Work of Staggering Genius           | Eggers         |
+-- | Coraline                                            | Gaiman         |
+-- | What We Talk About When We Talk About Love: Stories | Carver         |
+-- | Where I'm Calling From: Selected Stories            | Carver         |
+-- | White Noise                                         | DeLillo        |
+-- | Cannery Row                                         | Steinbeck      |
+-- | Oblivion: Stories                                   | Foster Wallace |
+-- | Consider the Lobster                                | Foster Wallace |
+-- | 10% Happier                                         | Harris         |
+-- | fake_book                                           | Harris         |
+-- | Lincoln In The Bardo                                | Saunders       |
+-- +-----------------------------------------------------+----------------+
+SELECT title, author_lname FROM books GROUP BY author_lname;
+-- +-----------------------------------------------------+----------------+
+-- | title                                               | author_lname   |
+-- +-----------------------------------------------------+----------------+
+-- | What We Talk About When We Talk About Love: Stories | Carver         |
+-- | The Amazing Adventures of Kavalier & Clay           | Chabon         |
+-- | White Noise                                         | DeLillo        |
+-- | A Hologram for the King: A Novel                    | Eggers         |
+-- | Oblivion: Stories                                   | Foster Wallace |
+-- | Norse Mythology                                     | Gaiman         |
+-- | 10% Happier                                         | Harris         |
+-- | The Namesake                                        | Lahiri         |
+-- | Lincoln In The Bardo                                | Saunders       |
+-- | Just Kids                                           | Smith          |
+-- | Cannery Row                                         | Steinbeck      |
+-- +-----------------------------------------------------+----------------+

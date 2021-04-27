@@ -182,3 +182,26 @@ mysql-ctl cli
 	mysql> SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '____';
 	mysql> SELECT title FROM books WHERE title LIKE '%\%%';   // to detect '%'
 	mysql> SELECT title FROM books WHERE title LIKE '%\_%';   // to detect '_'
+
+### SELECT COUNT(*) FROM books;
+	SELECT COUNT(author_fname) FROM books;
+	SELECT COUNT(DISTINCT author_fname) FROM books;
+	SELECT COUNT(DISTICNT author_fname, auhtor_lname) FROM books;
+	SELECT title FROM books WHERE title LIKE '%the%';
+	SELECT COUNT(*) FROM books WHERE title LIKE '%the%';
+
+### SECTIION  9: AGGREGATE commands
+	COUNT
+		SELECT COUNT(*) FROM books;
+		SELECT COUNT(DISTINCT author_fname) FROM books;
+		SELECT COUNT(DISTINCT author_lname, author_fname) FROM books;
+		SELECT COUNT(*) FROM books WHERE title LIKE '%the%';
+	GROUP BY
+		SELECT author_lname, COUNT(*) FROM books GROUP BY author_lname;
+		SELECT author_fname, author_lname, COUNT(*) FROM books GRoUP BY author_lname;
+		SELECT CONCAT('In ' , released_year , ' ', COUNT(*), ' books(s) released') AS year FROM books GROUP BY released_year;
+  MIN and MAX
+		SELECT Min(released_year) FROM books;
+		SELECT Min(pages) FROM books;
+		SELECT title,pages FROM books WHERE pages =(SELECT MIN(pages) FROM books);
+		SELECT title, pages FROM books ORDER BY pages ASC Limit 1;
