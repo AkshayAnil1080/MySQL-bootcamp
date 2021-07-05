@@ -224,3 +224,13 @@ mysql-ctl cli
 			mysql> SELECT released_year, Avg(stock_quantity) FROM books GROUP by released_year;
 		Average pages written by each author_fname
 			mysql> SELECT author_fname, author_lname , Avg(Pages) FROM books GROUP BY author_lname, author_fname;
+
+### SECTION 12 - One To Many
+	Eg: Customers and orders
+	a. create customer table
+	b. create order table
+	FOREIGN KEY(customer_id) REFERENCES customers(id)
+	Foreign Key :
+		ref to another table within a given table.
+	NATURAL JOIN:
+		SELECT * FROM customers, orders;   - if do not specify anything -> NATURAL JOIN - n*m
