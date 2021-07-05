@@ -200,8 +200,27 @@ mysql-ctl cli
 		SELECT author_lname, COUNT(*) FROM books GROUP BY author_lname;
 		SELECT author_fname, author_lname, COUNT(*) FROM books GRoUP BY author_lname;
 		SELECT CONCAT('In ' , released_year , ' ', COUNT(*), ' books(s) released') AS year FROM books GROUP BY released_year;
-  MIN and MAX
+	MIN and MAX
 		SELECT Min(released_year) FROM books;
 		SELECT Min(pages) FROM books;
 		SELECT title,pages FROM books WHERE pages =(SELECT MIN(pages) FROM books);
 		SELECT title, pages FROM books ORDER BY pages ASC Limit 1;
+	MIN MAX with GROUP BY
+		Find the year each author published their first book.
+		 mysql> SELECT author_fname, author_lname, Min(released_year) FROM books GROUP  BY author_lname, author_fname;
+		Find the year each author published their latest book. - have to use max(released_year)
+		 mysql> SELECT author_fname, author_lname, Max(released_year) FROM books GROUP  BY author_lname, author_fname;
+		Find the longest page count for each author and give the column name as "Longestbooks" and author full name as " Authors"
+	 	 mysql> SELECT CONCAT(author_fname,' ', author_lname) AS Authors ,Max(pages) AS  LongestBooks FROM books GROUP BY author_lname, author_fname;
+	SUM :
+		Sum all the pages in entire database
+			mysql> SELECT Sum(pages) FROM books;
+		SUM All pages that each author has written.
+			mysql> SELECT author_fname, author_lname , Sum(Pages) FROM books GROUP BY author_lname, author_fname;
+	AVG :
+		Calculate released_year across all books
+			mysql> SELECT avg(released_year) FROM books;
+		Calcualte the average stock quantity for books released in same year.
+			mysql> SELECT released_year, Avg(stock_quantity) FROM books GROUP by released_year;
+		Average pages written by each author_fname
+			mysql> SELECT author_fname, author_lname , Avg(Pages) FROM books GROUP BY author_lname, author_fname;

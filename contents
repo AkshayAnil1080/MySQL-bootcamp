@@ -5,3 +5,7 @@ REPLACE
 REVERSE
 CHAR_LENGHT
 UPPER AND LOWER
+limit
+like
+detect % , _ - > '%\%%' - > '%\_%'
+Aggregate fun -  COUNT , GROUP BY , MAX and MIN , SUM , AVG
