@@ -229,8 +229,88 @@ mysql-ctl cli
 	Eg: Customers and orders
 	a. create customer table
 	b. create order table
-	FOREIGN KEY(customer_id) REFERENCES customers(id)
+	FOREIGN KEY(customer_id) REFERENCES customers(id) - now u cannot directly delete entries speccally from one table. u need to delete in both.
 	Foreign Key :
 		ref to another table within a given table.
-	NATURAL JOIN:
+	IMPLICIT INNER JOIN
 		SELECT * FROM customers, orders;   - if do not specify anything -> NATURAL JOIN - n*m
+	EXPLICIT INNER JOIN
+		SELECT first_name, last_name, order_date, amount
+		FROM customers
+		JOIN orders
+	    ON customers.id = orders.customer_id;
+
+
+
+			mysql> select * from customers;
+			-- +----+------------+-----------+------------------+
+			-- | id | first_name | last_name | email            |
+			-- +----+------------+-----------+------------------+
+			-- |  1 | Boy        | George    | george@gmail.com |
+			-- |  2 | George     | Michael   | gm@gmail.com     |
+			-- |  3 | David      | Bowie     | david@gmail.com  |
+			-- |  4 | Blue       | Steele    | blue@gmail.com   |
+			-- |  5 | Bette      | Davis     | bette@aol.com    |
+			-- +----+------------+-----------+------------------+
+
+			mysql> select * from orders;
+			-- +----+------------+--------+-------------+
+			-- | id | order_date | amount | customer_id |
+			-- +----+------------+--------+-------------+
+			-- |  1 | 2016-02-10 |  99.99 |           1 |
+			-- |  2 | 2017-11-11 |  35.50 |           1 |
+			-- |  3 | 2014-12-12 | 800.67 |           2 |
+			-- |  4 | 2015-01-03 |  12.50 |           2 |
+			-- |  5 | 1999-04-11 | 450.25 |           5 |
+			-- +----+------------+--------+-------------+
+
+			Cross Join
+			SELECT * FROM customers, orders;
+			Inner JOIN
+			SELECT * FROM customers
+			JOIN orders
+			    ON customers.id = orders.customer_id;
+					+----+------------+-----------+------------------+----+------------+--------+-------------+
+					| id | first_name | last_name | email            | id | order_date | amount | customer_id |
+					+----+------------+-----------+------------------+----+------------+--------+-------------+
+					|  1 | Boy        | George    | george@gmail.com |  1 | 2016-02-10 |  99.99 |           1 |
+					|  1 | Boy        | George    | george@gmail.com |  2 | 2017-11-11 |  35.50 |           1 |
+					|  2 | George     | Michael   | gm@gmail.com     |  3 | 2014-12-12 | 800.67 |           2 |
+					|  2 | George     | Michael   | gm@gmail.com     |  4 | 2015-01-03 |  12.50 |           2 |
+					|  5 | Bette      | Davis     | bette@aol.com    |  5 | 1999-04-11 | 450.25 |           5 |
+					+----+------------+-----------+------------------+----+------------+--------+-------------+
+			LEFT Join
+			SELECT * FROM customers
+			LEFT JOIN orders
+			  ON customers.id = orders.customer_id;
+				+----+------------+-----------+------------------+------+------------+--------+-------------+
+				| id | first_name | last_name | email            | id   | order_date | amount | customer_id |
+				+----+------------+-----------+------------------+------+------------+--------+-------------+
+				|  1 | Boy        | George    | george@gmail.com |    1 | 2016-02-10 |  99.99 |           1 |
+				|  1 | Boy        | George    | george@gmail.com |    2 | 2017-11-11 |  35.50 |           1 |
+				|  2 | George     | Michael   | gm@gmail.com     |    3 | 2014-12-12 | 800.67 |           2 |
+				|  2 | George     | Michael   | gm@gmail.com     |    4 | 2015-01-03 |  12.50 |           2 |
+				|  5 | Bette      | Davis     | bette@aol.com    |    5 | 1999-04-11 | 450.25 |           5 |
+				|  3 | David      | Bowie     | david@gmail.com  | NULL | NULL       |   NULL |        NULL |
+				|  4 | Blue       | Steele    | blue@gmail.com   | NULL | NULL       |   NULL |        NULL |
+				+----+------------+-----------+------------------+------+------------+--------+-------------+
+			RIGHT Join
+			SELECT * FROM customers
+			RIGHT JOIN orders
+			  ON customers.id = orders.customer_id;
+						+------+------------+-----------+------------------+----+------------+--------+-------------+
+			| id   | first_name | last_name | email            | id | order_date | amount | customer_id |
+			+------+------------+-----------+------------------+----+------------+--------+-------------+
+			|    1 | Boy        | George    | george@gmail.com |  1 | 2016-02-10 |  99.99 |           1 |
+			|    1 | Boy        | George    | george@gmail.com |  2 | 2017-11-11 |  35.50 |           1 |
+			|    2 | George     | Michael   | gm@gmail.com     |  3 | 2014-12-12 | 800.67 |           2 |
+			|    2 | George     | Michael   | gm@gmail.com     |  4 | 2015-01-03 |  12.50 |           2 |
+			|    5 | Bette      | Davis     | bette@aol.com    |  5 | 1999-04-11 | 450.25 |           5 |
+			+------+------------+-----------+------------------+----+------------+--------+-------------+
+
+			HOW to delete table when foreign key is the existing constraint?
+			ow u cannot directly delete entries speccally from one table. u need to delete in both.
+			DROP TABLE customers; - error
+			DROP TABLE orders; - error
+			DROP TABLE  customers , orders; - error
+			DROP TABLE orders, customers; - works
