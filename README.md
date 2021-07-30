@@ -226,6 +226,7 @@ mysql-ctl cli
 			mysql> SELECT author_fname, author_lname , Avg(Pages) FROM books GROUP BY author_lname, author_fname;
 
 ### SECTION 12 - One To Many
+VISUAL ANIMATION FOR JOINS - https://dataschool.com/how-to-teach-people-sql/left-right-join-animated/
 	Eg: Customers and orders
 	a. create customer table
 	b. create order table
